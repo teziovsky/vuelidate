@@ -29,7 +29,7 @@ export const maxValue: (
 ) => ValidationRuleWithParams<{ max: number }>;
 export const minLength: (
   min: number | Ref<number>
-) => ValidationRuleWithParams<{ length: number }>;
+) => ValidationRuleWithParams<{ min: number }>;
 export const minValue: (
   min: number | Ref<number> | string | Ref<string>
 ) => ValidationRuleWithParams<{ min: number }>;
@@ -39,10 +39,10 @@ export const or: <T = unknown>(
   ...validators: ValidationRule<T>[]
 ) => ValidationRuleWithoutParams;
 export const required: ValidationRuleWithoutParams;
-export const requiredIf: (prop: boolean | string | (() => boolean | Promise<boolean>)) => ValidationRuleWithoutParams;
-export const requiredUnless: (prop: boolean | string | (() => boolean | Promise<boolean>)) => ValidationRuleWithoutParams;
+export const requiredIf: (prop: boolean | Ref<boolean> | string | (() => boolean | Promise<boolean>)) => ValidationRuleWithoutParams;
+export const requiredUnless: (prop: boolean | Ref<boolean> | string | (() => boolean | Promise<boolean>)) => ValidationRuleWithoutParams;
 export const sameAs: <E = unknown>(
-  equalTo: E,
+  equalTo: E | Ref<E>,
   otherName?: string
 ) => ValidationRuleWithParams<{ equalTo: E, otherName: string }>;
 export const url: ValidationRuleWithoutParams;
@@ -75,17 +75,17 @@ export function messageParamsFactory(params: {
 export interface MessageProps {
   $model: string;
   $property: string;
-  $params: object;
+  $params: { [attr: string] : any };
   $validator: string;
-  $pending: boolean,
-  $invalid: boolean,
-  $response: unknown,
-  $propertyPath: string,
+  $pending: boolean;
+  $invalid: boolean;
+  $response: unknown;
+  $propertyPath: string;
 }
 
 export type ValidatorWrapper = (...args: any[]) => ValidationRule ;
 
-declare function withI18nMessage <T extends (ValidationRule | ValidatorWrapper)>(
+declare function withI18nMessage <T extends (ValidationRule | ValidatorWrapper)>(
   validator: T,
   options?: {
     withArguments?: boolean,
