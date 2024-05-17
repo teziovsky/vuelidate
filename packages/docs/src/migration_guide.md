@@ -16,7 +16,7 @@ import Vuelidate from 'vuelidate'
 ```
 with
 ```js
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 ```
 
 2. Change import location for validators
@@ -116,7 +116,7 @@ Here’s the wrapper component.
 </template>
 
 <script>
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import PersonInput from '@/components/PersonInput'
 
 export default {
@@ -150,7 +150,7 @@ And here we have the single person component that has its own validation rules.
 </template>
 
 <script>
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 
 export default {
   props: {
@@ -191,5 +191,64 @@ export default {
   validations: {
     foo: { asyncValidator: withAsync(asyncValidator) }
   }
+}
+```
+
+## Change of regex helper method signature
+
+The first string parameter of the regex helper method signature has been removed.
+It used to be required for registering the name of the validator for the withParams function, which is no longer a necessity.
+
+### Migration strategy
+
+Simply remove the first parameter and keep only the regex:
+
+```js
+// v0.x
+const regexSlug = helpers.regex('slug', /^[-A-Za-z0-9]+$/)
+
+// v2
+const regexSlug = helpers.regex(/^[-A-Za-z0-9]+$/)
+```
+
+## Validation groups change
+
+Validation groups have been moved to the `$validationGroups` config.
+
+### Migration strategy
+
+To create a validation group, you must specify a config property at the top level of your rules, called `$validationGroups`
+
+This is an object that holds validation groups, scoped under a name of your choice:
+
+```js
+const rules = {
+  number: { isEven },
+  nested: {
+    word: { required: v => !!v }
+  },
+  $validationGroups: {
+    firstName: ['number', 'nested.word']
+  }
+}
+```
+
+In the above example, it will create a group called `firstName` that will reflect the state of `number` and `nested.word`.
+
+You can see all your defined groups in the `v$.$validationGroups` property of your vue instance.
+
+## $anyError removal
+
+The `$anyError` helper is removed.
+
+### Migration strategy
+
+Simplest would be to check for `$errors.length` to see if children have an error.
+
+Alternatively you can call `$validate()` and check the resolved value.
+
+```js
+if (await this.v$.$validate()) {
+    // all good, submit to server
 }
 ```

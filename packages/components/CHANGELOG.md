@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.2.5...@vuelidate/components@1.2.6) (2023-06-29)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
+## [1.2.5](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.2.4...@vuelidate/components@1.2.5) (2023-03-29)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
+## [1.2.4](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.2.3...@vuelidate/components@1.2.4) (2023-03-26)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
+## [1.2.3](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.2.2...@vuelidate/components@1.2.3) (2022-09-25)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
+## [1.2.2](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.2.1...@vuelidate/components@1.2.2) (2022-09-25)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
+## [1.2.1](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.2.0...@vuelidate/components@1.2.1) (2022-08-04)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
+# [1.2.0](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.1.22...@vuelidate/components@1.2.0) (2022-07-23)
+
+
+### Features
+
+* add index to forEach and ValidateEach helpers ([#1065](https://github.com/vuelidate/vuelidate/issues/1065)) ([b9dd30c](https://github.com/vuelidate/vuelidate/commit/b9dd30c70debcdf66202707710bebb99fd86f103))
+
+
+
+
+
+## [1.1.22](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.1.21...@vuelidate/components@1.1.22) (2022-06-24)
+
+**Note:** Version bump only for package @vuelidate/components
+
+
+
+
+
 ## [1.1.21](https://github.com/vuelidate/vuelidate/compare/@vuelidate/components@1.1.20...@vuelidate/components@1.1.21) (2022-05-01)
 
 

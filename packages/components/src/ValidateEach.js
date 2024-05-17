@@ -1,3 +1,4 @@
+import { toRef } from 'vue-demi'
 import { useVuelidate } from '@vuelidate/core'
 
 export default {
@@ -14,10 +15,14 @@ export default {
     options: {
       type: Object,
       default: () => ({})
+    },
+    index: {
+      type: Number,
+      default: 0
     }
   },
   setup (props, { slots }) {
-    const v = useVuelidate(props.rules, props.state, props.options)
+    const v = useVuelidate(props.rules, toRef(props, "state"), props.options)
     return () => slots.default({ v: v.value })
   }
 }

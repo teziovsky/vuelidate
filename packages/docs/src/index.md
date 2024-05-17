@@ -45,13 +45,13 @@ Now you can access use `VueDemi`, `Vuelidate` and `VuelidateValidators` to build
 ## Getting Started
 
 ::: tip
-When used with Vue 2.x, you need to install the `@vue/composition-api` plugin. You can learn how to do that [here](https://github.com/vuejs/composition-api).
+When used with Vue <2.7, you need to install the `@vue/composition-api` plugin. You can learn how to do that [here](https://github.com/vuejs/composition-api).
 Once this is done, you can proceed with the below.
 :::
 
 
 ```js
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 
 export default {
@@ -84,7 +84,7 @@ Lets explain what happens here. We declare our local state with `data`, then we 
 Notice how the the objects returned from `data` and `validations` have a matching structure.
 
 ```js{9-15,18-24}
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 
 export default {
@@ -114,11 +114,11 @@ export default {
 
 ### Alternative syntax (Composition API)
 
-Vuelidate v2.x also comes with support for Composition API. The above example can be translated into the composition API syntax.
+Vuelidate v2 also comes with support for Composition API. The above example can be translated into the composition API syntax.
 
 ```js
-import { reactive } from 'vue' // "from '@vue/composition-api'" if you are using Vue 2.x
-import useVuelidate from '@vuelidate/core'
+import { reactive } from 'vue' // "from '@vue/composition-api'" if you are using Vue <2.7
+import { useVuelidate } from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 
 export default {
@@ -147,7 +147,7 @@ export default {
 
 Now that validations are set up, we can check inside our template for errors by looking for example at the `firstName` property inside of the `v$` Vuelidate object. It will hold all the information and state of our `firstName` state's validation.
 
-If _any_ error is present, the `$errors` array property inside of `$v.firstName` will contain an object that describes each error for us to loop through.
+If _any_ error is present, the `$errors` array property inside of `v$.firstName` will contain an object that describes each error for us to loop through.
 
 Each object inside the `$errors` array will contain a few properties that allows us to dynamically build our error message.
 
@@ -179,15 +179,11 @@ Head over to the [Guide](./guide.md) page now for a more detailed guide on how t
 
 ## Sponsors
 
-### Gold
-
 <p align="center">
-  <a href="https://vuejs.amsterdam/?utm_source=newsletter&utm_medium=logo&utm_campaign=vuejs-newsletter" target="_blank">
-    <img src="https://camo.githubusercontent.com/d70ce43e50f085dcaaba44706e75107b0f86ad6ab45d7cd75ec2d877db543d86/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3739333538333739373435343530333937362f3739333538333833313336393634363132302f7675656a73616d7374657264616d2e706e67" alt="Vue.js Amsterdam" width="360px">
+  <a href="https://getform.io" target="_blank">
+    <img src="https://cdn.discordapp.com/attachments/1002927810710605875/1034915542596845728/getform.png" alt="Get Form" width="240px">
   </a>
 </p>
-
-### Silver
 
 <p align="center">
   <a href="https://www.storyblok.com/developers?utm_source=newsletter&utm_medium=logo&utm_campaign=vuejs-newsletter" target="_blank">
@@ -195,10 +191,8 @@ Head over to the [Guide](./guide.md) page now for a more detailed guide on how t
   </a>
 </p>
 
-### Bronze
-
 <p align="center">
   <a href="https://www.vuemastery.com/" target="_blank">
-    <img src="https://cdn.discordapp.com/attachments/258614093362102272/557267759130607630/Vue-Mastery-Big.png" alt="Vue Mastery logo" width="180px">
+    <img src="https://cdn.discordapp.com/attachments/258614093362102272/557267759130607630/Vue-Mastery-Big.png" alt="Vue Mastery logo" width="240px">
   </a>
 </p>

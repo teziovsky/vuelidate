@@ -10,7 +10,7 @@ You can still define your validation rules as part of the Options API.
 ```vue
 
 <script>
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import { minLength, required } from '@vuelidate/validators'
 
 export default {
@@ -40,7 +40,7 @@ Vuelidate is primarily built on top of the Composition API, so its best suited t
 ### Using an object of `refs`
 
 ```js
-import { ref, computed } from 'vue' // or '@vue/composition-api' in Vue 2.x
+import { ref, computed } from 'vue' // or '@vue/composition-api' in Vue <2.7
 import { useVuelidate } from '@vuelidate/core'
 import { minLength, required } from '@vuelidate/validators'
 
@@ -71,7 +71,7 @@ In the template it is unwrapped for you.
 ### Using `reactive` state
 
 ```js
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { minLength, required } from '@vuelidate/validators'
 
@@ -91,6 +91,40 @@ export default {
     const v$ = useVuelidate(rules, state)
 
     return { name, requiredNameLength, v$ }
+  }
+}
+```
+
+### Using mixed (e.g. `reactive` and `computed`) state
+
+```js
+import { computed, reactive } from 'vue'
+import { useVuelidate } from '@vuelidate/core'
+import { minValue, required } from '@vuelidate/validators'
+
+export default {
+  setup () {
+    // reactive state, e.g. form data
+    const data = reactive({
+      type: '',
+      name: '',
+      targetMonth: new Date().getMonth(),
+      targetYear: new Date().getFullYear()
+    })
+    // computed state which needs validation
+    const targetDate = computed(() => new Date(data.targetYear, data.targetMonth + 1, 0)) // last day in the month
+
+    const rules = {
+      data: {
+        type: { required },
+        name: { required }
+      },
+      targetDate: { minValue: minValue(new Date()) },
+    }
+
+    const v$ = useVuelidate(rules, { data, targetDate })
+
+    return { data, v$ }
   }
 }
 ```
@@ -172,7 +206,7 @@ cause performance issues in more complex scenarios. Refer to [Nested Validators]
 <script>
 // setup in a component
 import { helpers, required } from '@vuelidate/validators'
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import { reactive } from 'vue'
 
 export default {
@@ -279,7 +313,7 @@ the need for dedicated form components. This would allow you to keep all the rul
 
 <script>
 import { reactive } from 'vue'
-import useVuelidate from '@vuelidate/core'
+import { useVuelidate } from '@vuelidate/core'
 import { ValidateEach } from '@vuelidate/components'
 import { minLength, required } from '@vuelidate/validators'
 
@@ -329,7 +363,7 @@ The `$scope` property has three main use cases:
 **Example using $scope**
 
 ```js
-// component that should not collect/emit eny resulsts.
+// component that should not collect/emit any result.
 const IsolatedComponent = {
   setup () {
     const validations = {}
@@ -521,7 +555,7 @@ When using the Composition API, you can pass your configuration object as the th
 is just a collector, see [Passing a single parameter to useVuelidate](#passing-a-single-parameter-to-usevuelidate).
 
 ```js
-import { reactive } from 'vue' // or '@vue/composition-api' in Vue 2.x
+import { reactive } from 'vue' // or '@vue/composition-api' in Vue <2.7
 import { useVuelidate } from '@vuelidate/core'
 import { email, required } from '@vuelidate/validators'
 
@@ -779,10 +813,46 @@ the `currentVueInstance` config to pass the component's vue instance.
 export default {
   render: () => {},
   async setup () {
-    const currentVueInstance = getCurrentInstance()
+    const currentVueInstance = getCurrentInstance()?.proxy
     const result = await doAsyncStuff()
     const vuelidate = useVuelidate(rules, result.state, { currentVueInstance })
     return { vuelidate }
   }
+}
+```
+
+## Validation Groups
+
+You may want to group a few validation rules under one roof, in which case a validation group is a perfect choice.
+
+To create a validation group, you must specify a config property at the top level of your rules, called `$validationGroups`.
+
+This is an object that holds the name of your groups and an array of property paths, which will be the group itself.
+
+```js
+const rules = {
+  number: { isEven },
+  nested: {
+    word: { required: v => !!v }
+  },
+  $validationGroups: {
+    firstGroup: ['number', 'nested.word']
+  }
+}
+```
+
+In the above example, it will create a group called `firstGroup` that will reflect the state of `number` and `nested.word`.
+
+You can see all your defined groups in the `v$.$validationGroups` property of your vue instance.
+
+The group has the typical properties of other validations:
+
+```ts
+interface ValidationGroupItem {
+  $invalid: boolean,
+  $error: boolean,
+  $pending: boolean,
+  $errors: ErrorObject[],
+  $silentErrors: ErrorObject[]
 }
 ```

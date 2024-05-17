@@ -5,22 +5,22 @@
       <input type="number" v-model.number="numberB">
     </div>
     <!-- <NestedA /> -->
-    <!-- <pre style="background-color: white;">{{ $v.$errors }}</pre> -->
+    <!-- <pre style="background-color: white;">{{ v$.$errors }}</pre> -->
   </div>
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
-import useVuelidate from '@vuelidate/core'
+import { ref } from 'vue'
+import { useVuelidate } from '@vuelidate/core'
 import { required, maxValue, minValue } from '@vuelidate/validators'
 
 export default {
   setup () {
     const numberB = ref(8)
     const rules = { numberB: { required, maxValue: maxValue(5), minValue: minValue(3) } }
-    const $v = useVuelidate(rules, { numberB }, 'NestedB')
+    const v$ = useVuelidate(rules, { numberB }, 'NestedB')
 
-    return { numberB, $v }
+    return { numberB, v$ }
   }
 }
 </script>

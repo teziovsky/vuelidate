@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.3...@vuelidate/validators@2.0.4) (2023-08-25)
+
+
+### Bug Fixes
+
+* **types:** expose messageParamsFactory typing ([#1175](https://github.com/vuelidate/vuelidate/issues/1175)) ([ec27c51](https://github.com/vuelidate/vuelidate/commit/ec27c51cc045ef5f856cebd44cba932f7bb48797))
+
+
+
+
+
+## [2.0.3](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.2...@vuelidate/validators@2.0.3) (2023-06-29)
+
+
+### Bug Fixes
+
+* **types:** Improve type declarations in exports ([#1184](https://github.com/vuelidate/vuelidate/issues/1184)) ([535b161](https://github.com/vuelidate/vuelidate/commit/535b161f52cf0a0adaaef102c4d80bd7fec4f4c1))
+
+
+
+
+
+## [2.0.2](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.1...@vuelidate/validators@2.0.2) (2023-03-29)
+
+**Note:** Version bump only for package @vuelidate/validators
+
+
+
+
+
+## [2.0.1](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.0...@vuelidate/validators@2.0.1) (2023-03-26)
+
+
+### Bug Fixes
+
+* **validators:** regex validator ([#1154](https://github.com/vuelidate/vuelidate/issues/1154)) ([ed89533](https://github.com/vuelidate/vuelidate/commit/ed8953389c3c7b190944f97846ae9ad75199854d)), closes [#699](https://github.com/vuelidate/vuelidate/issues/699)
+
+
+
+
+
+# [2.0.0](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.0-alpha.32...@vuelidate/validators@2.0.0) (2022-09-25)
+
+**Note:** Version bump only for package @vuelidate/validators
+
+
+
+
+
+# [2.0.0-alpha.32](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.0-alpha.31...@vuelidate/validators@2.0.0-alpha.32) (2022-09-25)
+
+**Note:** Version bump only for package @vuelidate/validators
+
+
+
+
+
+# [2.0.0-alpha.31](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.0-alpha.30...@vuelidate/validators@2.0.0-alpha.31) (2022-07-23)
+
+
+### Bug Fixes
+
+* Add support for Vue 2.7 ([#1082](https://github.com/vuelidate/vuelidate/issues/1082)), closes [#1079](https://github.com/vuelidate/vuelidate/issues/1079) ([f3663e1](https://github.com/vuelidate/vuelidate/commit/f3663e1aa424c46991805deac55e12578482bcff))
+
+
+### Features
+
+* add index to forEach and ValidateEach helpers ([#1065](https://github.com/vuelidate/vuelidate/issues/1065)) ([b9dd30c](https://github.com/vuelidate/vuelidate/commit/b9dd30c70debcdf66202707710bebb99fd86f103))
+
+
+
+
+
+# [2.0.0-alpha.30](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.0-alpha.29...@vuelidate/validators@2.0.0-alpha.30) (2022-06-24)
+
+
+### Bug Fixes
+
+* **types:** add Ref type to parameters in validators, fixes [#1054](https://github.com/vuelidate/vuelidate/issues/1054) ([0962038](https://github.com/vuelidate/vuelidate/commit/0962038fcbc7ef0c38e9282a6b48a65313906c40))
+
+
+
+
+
 # [2.0.0-alpha.29](https://github.com/vuelidate/vuelidate/compare/@vuelidate/validators@2.0.0-alpha.28...@vuelidate/validators@2.0.0-alpha.29) (2022-05-01)
 
 

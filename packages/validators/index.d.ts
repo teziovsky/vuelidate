@@ -25,13 +25,13 @@ export const maxLength: (
   max: number | Ref<number>
 ) => ValidationRuleWithParams<{ max: number }>;
 export const maxValue: (
-  max: number | Ref<number> | string | Ref<string>
+  max: number | Ref<number> | string | Ref<string> | Date | Ref<Date>
 ) => ValidationRuleWithParams<{ max: number }>;
 export const minLength: (
   min: number | Ref<number>
 ) => ValidationRuleWithParams<{ min: number }>;
 export const minValue: (
-  min: number | Ref<number> | string | Ref<string>
+  min: number | Ref<number> | string | Ref<string> | Date | Ref<Date>
 ) => ValidationRuleWithParams<{ min: number }>;
 export const not: <T = unknown>(validator: ValidationRule<T>) => ValidationRuleWithoutParams;
 export const numeric: ValidationRuleWithoutParams;
@@ -61,16 +61,18 @@ export function TranslationFunction(path: string, params: { model: string, prope
 
 export function messagePathFactory(params: MessageProps): string;
 
-export function messageParamsFactory(params: {
-  model: unknown,
-  property: string,
-  invalid: boolean,
-  pending: boolean,
-  propertyPath: string,
-  response: unknown,
-  validator: string,
-  [key: string]: any
-}): string;
+export interface MessageParams {
+  model: unknown;
+  property: string;
+  invalid: boolean;
+  pending: boolean;
+  propertyPath: string;
+  response: unknown;
+  validator: string;
+  [key: string]: any;
+}
+
+export function messageParamsFactory(params: MessageParams): MessageParams;
 
 export interface MessageProps {
   $model: string;

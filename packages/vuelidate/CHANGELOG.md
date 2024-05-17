@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.2...@vuelidate/core@2.0.3) (2023-06-29)
+
+
+### Bug Fixes
+
+* **types:** Improve type declarations in exports ([#1184](https://github.com/vuelidate/vuelidate/issues/1184)) ([535b161](https://github.com/vuelidate/vuelidate/commit/535b161f52cf0a0adaaef102c4d80bd7fec4f4c1))
+
+
+
+
+
+## [2.0.2](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.1...@vuelidate/core@2.0.2) (2023-03-29)
+
+**Note:** Version bump only for package @vuelidate/core
+
+
+
+
+
+## [2.0.1](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0...@vuelidate/core@2.0.1) (2023-03-26)
+
+
+### Bug Fixes
+
+* declare vuelidate as module. ([20c58d5](https://github.com/vuelidate/vuelidate/commit/20c58d566da811e8391467d53af79859165edf16)), closes [#1111](https://github.com/vuelidate/vuelidate/issues/1111)
+
+
+
+
+
+# [2.0.0](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0-alpha.45...@vuelidate/core@2.0.0) (2022-09-25)
+
+**Note:** Version bump only for package @vuelidate/core
+
+
+
+
+
+# [2.0.0-alpha.45](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0-alpha.44...@vuelidate/core@2.0.0-alpha.45) (2022-09-25)
+
+**Note:** Version bump only for package @vuelidate/core
+
+
+
+
+
+# [2.0.0-alpha.44](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0-alpha.43...@vuelidate/core@2.0.0-alpha.44) (2022-08-04)
+
+
+### Bug Fixes
+
+* **core:** UID doesn't exist on the component public instance in Vue 3 [#1090](https://github.com/vuelidate/vuelidate/issues/1090)  ([#1091](https://github.com/vuelidate/vuelidate/issues/1091)) ([8bdf2ac](https://github.com/vuelidate/vuelidate/commit/8bdf2accfe3ab4da1f0c87b1d1e10ee2617ea8ea))
+
+
+
+
+
+# [2.0.0-alpha.43](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0-alpha.42...@vuelidate/core@2.0.0-alpha.43) (2022-07-23)
+
+
+### Bug Fixes
+
+* Add support for Vue 2.7 ([#1082](https://github.com/vuelidate/vuelidate/issues/1082)), closes [#1079](https://github.com/vuelidate/vuelidate/issues/1079) ([f3663e1](https://github.com/vuelidate/vuelidate/commit/f3663e1aa424c46991805deac55e12578482bcff))
+* **types:** extend BaseValidation type to allow accessing form properties directly on v$ ([#1088](https://github.com/vuelidate/vuelidate/issues/1088)) ([9545160](https://github.com/vuelidate/vuelidate/commit/9545160289017c60a62d6b3017f9f0500040a4a0))
+
+
+### Features
+
+* add validation groups ([#1066](https://github.com/vuelidate/vuelidate/issues/1066)) ([ad5091b](https://github.com/vuelidate/vuelidate/commit/ad5091beee59495ed7b9bcafec735aec830e4f11))
+
+
+
+
+
+# [2.0.0-alpha.42](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0-alpha.41...@vuelidate/core@2.0.0-alpha.42) (2022-06-24)
+
+
+### Bug Fixes
+
+* Add esm loader support ([#1076](https://github.com/vuelidate/vuelidate/issues/1076)) ([a61fe60](https://github.com/vuelidate/vuelidate/commit/a61fe6014afbe5a85620d06a57e454bf690961e1))
+
+
+
+
+
 # [2.0.0-alpha.41](https://github.com/vuelidate/vuelidate/compare/@vuelidate/core@2.0.0-alpha.40...@vuelidate/core@2.0.0-alpha.41) (2022-05-01)
 
 
